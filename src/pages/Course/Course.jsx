@@ -39,7 +39,7 @@ function Course() {
   const fetchUser = async (course) => {
     if (course) {
       try {
-        const { data } = await getUser(autor.id);
+        const { data } = await getUser(course.autor.id);
         await setUser(data);
       } catch (error) {
         console.log(error);
@@ -54,8 +54,6 @@ function Course() {
   useEffect(() => {
     fetchUser(course);
   }, [course]);
-
-  console.log(course);
 
   return (
     <Layout>
@@ -90,7 +88,7 @@ function Course() {
                 </div>
               </div>
               <div className="course-page-about">
-                <h2>Receta</h2>
+                <h2>Paso a paso</h2>
                 <p>{course.instruccion}</p>
               </div>
               {

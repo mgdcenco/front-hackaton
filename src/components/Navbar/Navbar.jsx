@@ -57,12 +57,12 @@ function Navbar() {
           <div className="navbar__buttons">
             <Button
               className="navbar_buttons_login"
-              description="Log in"
+              description="Inicia Sesión"
               handleModal={handleLoginModal}
             />
             <Button
               className="navbar_buttons_signup"
-              description="Sign Up"
+              description="Regístrate"
               handleModal={handleSignUpModal}
             />
             {showSignUpModal ? (

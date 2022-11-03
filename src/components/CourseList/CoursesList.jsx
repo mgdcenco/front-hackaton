@@ -16,13 +16,13 @@ const CoursesList = ({ array, titulo, descripcion }) => {
           ? array.map((course, i) => {
               return (
                 <div key={i} className="course-card">
-                  <div className="course-card-image">
+                  {/* <div className="course-card-image">
                     {course.imagen.length > 0 ? (
                       <img src={course.imagen[0]} />
                     ) : (
                       <img src="https://kknd26.ru/images/no_photo.png" />
                     )}
-                  </div>
+                  </div> */}
                   <div className="course-card-body">
                     <div className="course-rate">{stars(course)}</div>
                     <Link to={`/recetas/${course.id}`} key={course.descripcion}>
@@ -37,7 +37,7 @@ const CoursesList = ({ array, titulo, descripcion }) => {
                           key={course.descripcion}
                         >
                           <div className="course-description">
-                            <p>{course.descripcion.slice(0, 80)}...</p>
+                            <p>{course.instrucciones.slice(0, 80)}...</p>
                           </div>
                         </Link>
 

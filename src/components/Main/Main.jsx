@@ -49,7 +49,7 @@ function Main({user}) {
         <Usercard user={user}/>
         {
           user.email === loggedUser.email ?
-        <Button description="New Course" handleModal={handleModal} />
+        <Button description="Nueva Receta" handleModal={handleModal} />
           : ""
         }
       </div>

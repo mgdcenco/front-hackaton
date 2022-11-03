@@ -15,6 +15,7 @@ function App() {
   const [isLogged, setIsLogged] = useState(false);
   const [showNewCourseModal, setShowNewCourseModal] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);  
+  const [recetaModal, setRecetaModal] = useState(false);  
   const strUser = localStorage.getItem("user");
 
   useEffect(() => {
@@ -38,7 +39,10 @@ function App() {
         setShowLoginModal,
         isLogged,
         setIsLogged,
-        strUser}}
+        strUser,
+        recetaModal,
+        setRecetaModal
+      }}
     >
       <div className="App" id={theme}>
         <BrowserRouter>

@@ -30,7 +30,7 @@ function LoginModal() {
     <div className="modal-background">
       <div className="login-modal modal-container">
         <div className="modal-header login-modal-header">
-          <h4>Welcome Again!</h4>
+          <h4>Hola de nuevo!</h4>
         </div>
         <div className="modal-form-container">
           <form action="" className="modal-form">
@@ -49,12 +49,12 @@ function LoginModal() {
           </form>
         </div>
         <Button
-          description="Login"
+          description="Inicia Sesión"
           className="sign-up-button"
           handleModal={fetchUser}
         />
         <div className="signup-sugest">
-          <p>Don't have an account? Sign up</p>
+          <p>No tienes cuenta? Regístrate</p>
         </div>
       </div>
     </div>

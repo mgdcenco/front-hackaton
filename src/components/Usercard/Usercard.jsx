@@ -17,6 +17,8 @@ function Usercard({user}) {
 
   console.log(pagePath);
 
+  
+
   return (
     <>
       <div className="course-page-course-owner">

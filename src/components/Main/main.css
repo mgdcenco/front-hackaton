@@ -1,0 +1,16 @@
+.main-header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 25px;
+}
+
+.main-background{
+    width: 100%;
+    height: 320px;
+    background-color: aquamarine;
+    position: absolute;
+    background-size: cover;
+    filter: brightness(0.4);
+}

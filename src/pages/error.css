@@ -1,0 +1,23 @@
+.Error__total {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 20px;
+  min-height: 60vh;
+}
+
+#dark .error__img {
+  filter: invert(1);
+}
+
+.error__img {
+  width: 150px;
+  height: 150px;
+}
+
+.Error__title {
+  margin-top: 15px;
+  font-size: 100px;
+}

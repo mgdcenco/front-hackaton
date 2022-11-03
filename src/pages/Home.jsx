@@ -4,6 +4,8 @@ import Navbar from "../components/Navbar/Navbar";
 import CoursesList from "../components/CourseList/CoursesList";
 import "./home.css";
 import { getMostValuedCourses, getDiscountCourses } from "../utils/apiConfig";
+import searchLogo from "../assets/search.svg";
+import Button from "../components/Button/Button";
 
 function Home() {
   const [mostValuedCourses, setMostvaluedCourses] = useState([]);
@@ -22,7 +24,8 @@ function Home() {
   useEffect(() => {
     try {
       fetchMostValuedCourses();
-      fetchDiscountCourses();
+      // fetchDiscountCourses();
+      console.log(mostValuedCourses);
     } catch (err) {
       console.log(err);
     }
@@ -30,19 +33,26 @@ function Home() {
 
   return (
     <>
-      <Navbar links={["Categories", "Projects", "Plus", "Blog", "Bliss Live"]} />
+      <Navbar />
       <div className="home-banner-container">
+        <div className="home-banner-filter"></div>
         <div className="home-banner-content">
-          <h1>Bliss is a community for amazing people</h1>
-          <p>
-            Learn from expert professionals and join the largest online
-            community for learners.
-          </p>
+          <div className="home-banner-text">
+            <h1>Recetas con tus ingredientes</h1>
+            <p>
+              Abre la heladera, ingresa tus ingredientes en el sitio y descubre
+              miles de recetas para ti.
+            </p>
+          </div>
+          <Button description="Click Aquí para buscar tu receta"/>
         </div>
       </div>
       <div className="home-courses">
-        <CoursesList title="Trending Courses" array={mostValuedCourses} description="Get access to the best online courses for creatives. Interact with the top professionals and discover the creative world's best-kept secrets."/>
-        <CoursesList title="Courses From $10.99!" array={discountCourses} description="Learn with the best for only $10.99 or even FREE"/>
+        <CoursesList
+          titulo="Las recetas mas valoradas"
+          array={mostValuedCourses}
+          descripcion="Accede a las recetas mas valoradas de nuestra app y encuentra inspiración a la hora de cocinar"
+        />
       </div>
       <Footer />
     </>

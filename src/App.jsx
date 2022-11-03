@@ -45,12 +45,12 @@ function App() {
           <Routes>
             <Route element={<ProtectedRoutes />}>
             <Route path="/profile" element={<Profile />} />
-            <Route path="/courses" element={<Courses />} />
+            <Route path="/recetas" element={<Courses />} />
             </Route> 
             <Route path="*" element={<Error />} />
             <Route path="/" element={<Home />} />
             <Route path="/user/:id" element={<User />} />
-            <Route path="/course/:id" element={<Course />}/>
+            <Route path="/recetas/:id" element={<Course />}/>
           </Routes>
         </BrowserRouter>
       </div>

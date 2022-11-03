@@ -1,6 +1,6 @@
 import React, {useContext, useEffect, useState} from "react";
 import "./footer.css"
-import logo from "../../assets/logo.png"
+import logo from "../../assets/logo.svg"
 import DarkThemeButton from '../DarkThemeButton/DarkThemeButton'
 import { UserContext } from "../../context/UserContext";
 import { Link } from "react-router-dom";
@@ -40,7 +40,7 @@ function Footer() {
         <Link to="/">
             <img src={logo} alt="App Logo" />
         </Link>
-            <p>© Martin Gamboa Dinardi, 2022.</p>
+            <p>Hackaton Cencosud, Grupo 5 2022.</p>
         </div>
         <div className="footer-dark-mode">
             <DarkThemeButton defaultChecked={checked} handleTheme={handleTheme}/>

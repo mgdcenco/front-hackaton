@@ -40,7 +40,7 @@ function Main({user}) {
   return (
     <>
      {
-        user.email === loggedUser.email ? <div className="main-background" style={{backgroundImage: `url(${loggedUser.profile_background})`}} ></div> : <div className="main-background" style={{backgroundImage: `url(${user.profile_background})`}} ></div>
+        user.email === loggedUser.email ? <div className="main-background" style={{backgroundImage: `url(${loggedUser.imagen_fondo})`}} ></div> : <div className="main-background" style={{backgroundImage: `url(${user.profile_background})`}} ></div>
       
       }
     <div className="main">
@@ -54,8 +54,7 @@ function Main({user}) {
         }
       </div>
       {showNewCourseModal ? <NewCourseModal fetchLastCourses={fetchLastCourses} fetchMostValuedCourses={fetchMostValuedCourses}/> : ""}
-      <CoursesList array={latestCourses} title={user.email === loggedUser.email ? "Your Latest Courses" : "Latest Courses"}/> 
-      <CoursesList array={mostValuedCourses} title={user.email === loggedUser.email ? "Your most valued courses" : "Most valued courses"}/> 
+      <CoursesList array={mostValuedCourses} titulo={user.email === loggedUser.email ? "Tus recetas mas valoradas" : "Most valued courses"}/> 
     </div>
     </>
     

@@ -2,14 +2,14 @@ import "./course-list.css";
 import { Link, useLocation } from "react-router-dom";
 import {stars} from "../../utils/rating-stars"
 
-const CoursesList = ({ array, title, description }) => {
+const CoursesList = ({ array, titulo, descripcion }) => {
   const location = useLocation();
 
   return (
     <div className="courses-list">
       <div className="courses-list-title-description">
-        <h4>{title}</h4>
-        <p>{description}</p>
+        <h4>{titulo}</h4>
+        <p>{descripcion}</p>
       </div>
       <div className="course-card-list">
         {array
@@ -17,39 +17,39 @@ const CoursesList = ({ array, title, description }) => {
               return (
                 <div key={i} className="course-card">
                   <div className="course-card-image">
-                    {course.images.length > 0 ? (
-                      <img src={course.images[0]} />
+                    {course.imagen.length > 0 ? (
+                      <img src={course.imagen[0]} />
                     ) : (
                       <img src="https://kknd26.ru/images/no_photo.png" />
                     )}
                   </div>
                   <div className="course-card-body">
                     <div className="course-rate">{stars(course)}</div>
-                    <Link to={`/course/${course.id}`} key={course.description}>
+                    <Link to={`/recetas/${course.id}`} key={course.descripcion}>
                       <div className="course-title">
-                        <h4>{course.title}</h4>
+                        <h4>{course.titulo}</h4>
                       </div>
                     </Link>
                     {location.pathname !== "/profile" ? (
                       <>
                         <Link
-                          to={`course/${course.id}`}
-                          key={course.description}
+                          to={`recetas/${course.id}`}
+                          key={course.descripcion}
                         >
                           <div className="course-description">
-                            <p>{course.description.slice(0, 80)}...</p>
+                            <p>{course.descripcion.slice(0, 80)}...</p>
                           </div>
                         </Link>
 
                         <div className="course-owner">
-                          <Link to={`/user/${course.owner.id}`}>
+                          <Link to={`/user/${course.autor.id}`}>
                             <small className="course-owner-name">
-                              A course by <b>{course.owner.name}</b>
+                              Una receta de <b>{course.autor.nombre}</b>
                             </small>
                           </Link>
-                          <Link to={`/user/${course.owner.id}`}>
+                          <Link to={`/user/${course.autor.id}`}>
                             <img
-                              src={course.owner.image}
+                              src={course.autor.imagen}
                               alt="Course Owner Image"
                               className="course-owner-image usercard_img"
                             />

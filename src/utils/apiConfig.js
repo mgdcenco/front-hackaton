@@ -1,12 +1,12 @@
 import axios from "axios";
-const baseCoursesURL = "http://localhost:3000/courses"
-const baseUsersURL = "http://localhost:3000/users"
+const baseCoursesURL = "http://localhost:3000/recetas"
+const baseUsersURL = "http://localhost:3000/user"
 
 //Courses - Site
 
 export const getCourses = () => axios.get(baseCoursesURL); // GET all 
 export const getOneCourse = (id) => axios.get(`${baseCoursesURL}/${id}`); // GET one 
-export const getMostValuedCourses = () => axios.get(`${baseCoursesURL}?_sort=rating,duration&_order=desc,asc&_limit=15`); // GET most valued
+export const getMostValuedCourses = () => axios.get(`${baseCoursesURL}?_sort=rating&_order=desc,asc&_limit=15`); // GET most valued
 export const getDiscountCourses = () => axios.get(`${baseCoursesURL}?price=11&_sort=rating&_order=desc,asc&_limit=10`); // GET most valued
 
 //Courses - Profile 

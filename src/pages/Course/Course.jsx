@@ -12,7 +12,7 @@ import Usercard from "../../components/Usercard/Usercard";
 
 function Course() {
   const location = useLocation();
-  const course_id = location.pathname.split("/")[2];
+  const receta_id = location.pathname.split("/")[2];
 
   const [course, setCourse] = useState();
   const [user, setUser] = useState({});
@@ -29,7 +29,7 @@ function Course() {
 
   const fetchCourse = async () => {
     try {
-      const { data } = await getOneCourse(course_id);
+      const { data } = await getOneCourse(receta_id);
       await setCourse(data);
     } catch (error) {
       console.log(error);
@@ -39,7 +39,7 @@ function Course() {
   const fetchUser = async (course) => {
     if (course) {
       try {
-        const { data } = await getUser(course.owner.id);
+        const { data } = await getUser(autor.id);
         await setUser(data);
       } catch (error) {
         console.log(error);
@@ -55,6 +55,8 @@ function Course() {
     fetchUser(course);
   }, [course]);
 
+  console.log(course);
+
   return (
     <Layout>
       <div className="course-page-container">
@@ -62,16 +64,16 @@ function Course() {
           <>
             <div className="course-page-info">
               <div className="course-page-header">
-                <h2>{course.title}</h2>
+                <h2>{course.titulo}</h2>
                 <div className="course-rate">{stars(course)}</div>
-                <p>
+                {/* <p>
                   A course by{" "}
                   <Link to={`/user/${course.owner.id}`}>
-                    <b>{user.name}</b>
+                    <b>{user.nombre}</b>
                   </Link>
-                </p>
+                </p> */}
               </div>
-              <div className="course-page-lenguage">
+              {/* <div className="course-page-lenguage">
                 <img src={audioIcon} alt="Available Audio Icon" />
                 <p>Audio: English</p>
                 <img src={subtitlesIcon} alt="Available Subtitles Icon" />
@@ -79,17 +81,17 @@ function Course() {
                   Spanish, English, Portuguese, German, French, Italian, Polish,
                   Dutch
                 </p>
-              </div>
+              </div> */}
               <div className="course-page-trailer">
-                <div className="course-page-trailer-header">Information</div>
-                <img src={course.images[0]} alt="Course Cover" />
+                <div className="course-page-trailer-header">Información</div>
+                <img src={course.imagen[0]} alt="Course Cover" />
                 <div className="course-page-trailer-footer">
-                  + Add to wishlist
+                  + Agregar a mis recetas favoritas
                 </div>
               </div>
               <div className="course-page-about">
-                <h2>{course.description}</h2>
-                <p>{course.about}</p>
+                <h2>Receta</h2>
+                <p>{course.instruccion}</p>
               </div>
               {
                 isLoading ?
@@ -100,7 +102,7 @@ function Course() {
               }
               <div className="course-page-imgs-carousel">
                   
-                {course.images.map((img, i) => {
+                {course.imagen.map((img, i) => {
                   return i != 0 ? (
                     <img
                       src={img}

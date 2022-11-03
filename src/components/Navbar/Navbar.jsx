@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.svg";
 import { UserContext } from "../../context/UserContext";
 import Button from "../Button/Button";
 import "./navbar.css";
@@ -7,7 +7,7 @@ import SignUpModal from "../SignUpModal/SignUpModal";
 import LoginModal from "../LoginModal/LoginModal";
 import { Link } from "react-router-dom";
 
-function Navbar({ links }) {
+function Navbar() {
   const { isLogged, showLoginModal, setShowLoginModal, strUser } =
     useContext(UserContext);
   const [showSignUpModal, setShowSignUpModal] = useState(false);
@@ -43,30 +43,11 @@ function Navbar({ links }) {
           </Link>
         </div>
 
-        <div className="navbar__links">
-          <ul>
-            {links
-              ? links.map((link, i) => {
-                  return (
-                    <li
-                      key={link}
-                      style={{
-                        marginRight: i != links.length - 1 ? "20px" : "",
-                      }}
-                    >
-                      {link}
-                    </li>
-                  );
-                })
-              : ""}
-          </ul>
-        </div>
-
         {isLogged ? (
           <div className="navbar_usercard_img_container">
             <Link to="/profile">
               <img
-                src={user.profile_image}
+                src={user.imagen}
                 alt="User Profile Image"
                 className="usercard_img"
               />

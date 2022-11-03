@@ -5,17 +5,17 @@ import { UserContext } from "../../context/UserContext";
 import {loginUser} from "../../utils/apiConfig";
 
 function LoginModal() {
-  const [userLoginInfo, setUserLoginInfo] = useState({ email: "", password: "" });
+  const [userLoginInfo, setUserLoginInfo] = useState({ email: "", contrasena: "" });
   const { setShowLoginModal, isLogged, setIsLogged } = useContext(UserContext);
 
   const fetchUser = async () => {
     try {
       const res = await loginUser(userLoginInfo.email);
       if (res.status === 200) {
-        if(res.data[0].password === userLoginInfo.password){
+        if(res.data[0].contrasena === userLoginInfo.contrasena){
           setShowLoginModal(false);
           setIsLogged(true);
-          localStorage.setItem("user", JSON.stringify({name: `${res.data[0].name}`, profile_image: `${res.data[0].profile_image}`, profile_background: `${res.data[0].profile_background}` ,email: `${res.data[0].email}`, profession: `${res.data[0].profession}`}) );
+          localStorage.setItem("user", JSON.stringify({nombre: `${res.data[0].nombre}`, imagen: `${res.data[0].imagen}`, imagen_fondo: `${res.data[0].imagen_fondo}` ,email: `${res.data[0].email}`}) );
         }else{
           console.log("Datos inválidos");
         }
@@ -44,7 +44,7 @@ function LoginModal() {
               type="password"
               name="password"
               placeholder="password"
-              onChange={(e) => setUserLoginInfo({ ...userLoginInfo, password: e.target.value })}
+              onChange={(e) => setUserLoginInfo({ ...userLoginInfo, contrasena: e.target.value })}
             />
           </form>
         </div>

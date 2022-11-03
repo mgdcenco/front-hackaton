@@ -1,29 +1,31 @@
 {
   "recetas": [
     {
-      "titulo": "Absolute Beginners Cooking Course",
-      "descripcion": "Easy meals for the complete novice. A series of short videos that makes it easy for anyone to learn.",
+      "titulo": "Arroz con tuco",
+      "instruccion": "2 tazas arroz crudo (yo utilizo el que no se pasa)1grande o 2 pequeñas cebolla (o 2 cebollas de verdeo)2 dientes ajo (o 1 puerro o ninguno)1 zanahoria grande1/2 pimiento pequeño1/2 lata arvejas1 lata salsa de tomate (o extracto de tomate o tomate en lata)1 bife de carne vacuna (Yo uso aguja o paleta. También pueden usar osobuco)a gusto Sala gusto Pimientaa gusto Orégano (o cualquier condimento que les guste)",
       "autor": {
-        "id": 1
+        "id": 1,
+        "nombre": "Martha Lawson",
+        "imagen": "https://images.pexels.com/photos/3771120/pexels-photo-3771120.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       },
       "ingredientes": [],
       "rating": 4,
       "imagen": [
-        "https://images.pexels.com/photos/7964669/pexels-photo-7964669.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
-        "https://images.pexels.com/photos/2284166/pexels-photo-2284166.jpeg?auto=compress&cs=tinysrgb&w=400",
-        "https://images.pexels.com/photos/1435899/pexels-photo-1435899.jpeg?auto=compress&cs=tinysrgb&w=400"
+        "https://unaitalianaenlacocina.es/wp-content/uploads/DSC_8583fir.jpg",
+        "https://images.pexels.com/photos/4110256/pexels-photo-4110256.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        "https://images.pexels.com/photos/1327838/pexels-photo-1327838.jpeg?auto=compress&cs=tinysrgb&w=800"
       ],
       "fecha": 1666693861319,
       "id": 1
     }
   ],
-  "usuarios": [
+  "user": [
     {
       "nombre": "Martha Lawson",
-      "email": "test6@test.com",
+      "email": "test@test.com",
       "contrasena": "test",
-      "imagen_perfil": "https://images.pexels.com/photos/1264210/pexels-photo-1264210.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      "imagen_fondo": "https://images.pexels.com/photos/6606527/pexels-photo-6606527.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "imagen": "https://images.pexels.com/photos/3771120/pexels-photo-3771120.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "imagen_fondo": "https://unaitalianaenlacocina.es/wp-content/uploads/DSC_8583fir.jpg",
       "id": 1
     }
   ]

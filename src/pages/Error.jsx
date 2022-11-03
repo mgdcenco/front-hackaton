@@ -2,7 +2,9 @@ import React from "react";
 import Layout from "../components/Layout/Layout";
 import cara from "../assets/icons8-comida-muerta-100.png";
 import Button from "../components/Button/Button";
+import qr from "../assets/qr.jpeg";
 import "./error.css";
+import "../components/Oferta/oferta.css"
 function Error() {
   return (
     <Layout>
@@ -11,10 +13,10 @@ function Error() {
         <img className="error__img" src={cara} />
         <p className="Error__text1">Disculpa, Página No Encontrada</p>
         <p className="Error__text2">La página que deseas acceder no existe</p>
-        <h2 className="Error__text2">
+        <h2 className="Error__subTitle">
           Pero no te preocupes, tenemos miles de opciones!!!
         </h2>
-        <Button description={"Inicio"} />
+        <Button description={"Voy a tener suerte!"} />
       </div>
     </Layout>
   );
